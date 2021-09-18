@@ -5,7 +5,28 @@
   "permissions": [
     "activeTab",
     "background",
-    "tabs"
+    "tabs",
+    "webRequest",
+    "*://*/*"
+  ],
+  "background": {
+    "scripts": [
+      "app/background.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://stackoverflow.com/questions/*"
+      ],
+      "include_globs": [
+        "*#epic*"
+      ],
+      "js": [
+        "index.js"
+      ]
+    }
   ],
   "browser_action": {
     "default_popup": "index.html",

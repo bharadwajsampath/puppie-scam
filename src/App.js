@@ -25,7 +25,52 @@ function App() {
     // });
   }, []);
   return (
-    <div className="App">{url ? <div>{url}</div> : <div>...loading</div>}</div>
+    <div className="App">
+      <div className="desc">
+        This extension will change its icon when you are browsing a scammers
+        website. So please beware. We'll try to make continous improvements in
+        the future to make it more obvious.
+      </div>
+      <div className="linkContainer">
+        <a
+          className="link"
+          href="https://www.puppyscamawarenessaustralia.com.au"
+          onClick={() => {
+            chrome.tabs.create({
+              url: "https://www.puppyscamawarenessaustralia.com.au",
+            });
+          }}
+        >
+          Scammers list
+        </a>
+      </div>
+      <div className="linkContainer">
+        <a
+          className="link"
+          href="https://www.puppyscamawarenessaustralia.com.au/scamreportform"
+          onClick={() => {
+            chrome.tabs.create({
+              url: "https://www.puppyscamawarenessaustralia.com.au/scamreportform",
+            });
+          }}
+        >
+          Report a new site
+        </a>
+      </div>
+      <div className="linkContainer">
+        <a
+          className="link"
+          href="https://www.linkedin.com/in/bharadwajsampath/"
+          onClick={() => {
+            chrome.tabs.create({
+              url: "https://www.linkedin.com/in/bharadwajsampath/",
+            });
+          }}
+        >
+          Contact the developer
+        </a>
+      </div>
+    </div>
   );
 }
 
